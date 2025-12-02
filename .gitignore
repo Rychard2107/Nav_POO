@@ -215,8 +215,8 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Database
-*.db
-
-# Vscode
+# Virtual Studio Code
 .vscode/
+
+#Database
+*.db
