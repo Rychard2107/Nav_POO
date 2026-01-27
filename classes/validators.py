@@ -141,19 +141,19 @@ class ValidadorUrl:
                         url_obj, erro_db = cls.criar_ou_obter(url_str)
                         
                         if url_obj:
-                            # print(f"✅ Salva: {url_str} (Normalizada: {url_obj.caminho})")
+                            # print(f"Salva: {url_str} (Normalizada: {url_obj.caminho})")
                             estatisticas["validas_salvas"] += 1
                         else:
-                            # print(f"❌ Erro DB ao salvar {url_str}: {erro_db}")
+                            # print(f"Erro DB ao salvar {url_str}: {erro_db}")
                             estatisticas["erros_db"] += 1
                     else:
-                        # print(f"❌ Inválida: {url_str} ({erro_validacao})")
+                        # print(f"Inválida: {url_str} ({erro_validacao})")
                         estatisticas["invalidas"] += 1
 
         except FileNotFoundError:
-            print(f"🚨 ERRO: Arquivo '{nome_arquivo}' não encontrado.")
+            print(f"ERRO: Arquivo '{nome_arquivo}' não encontrado.")
         except Exception as e:
-            print(f"🚨 ERRO INESPERADO: {str(e)}")
+            print(f"ERRO INESPERADO: {str(e)}")
             
         return estatisticas
 

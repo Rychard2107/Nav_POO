@@ -38,7 +38,7 @@ while True:
     entrada_text = Text()
     entrada_text.append("Digite URL ou comando (ex: google.com, #help, #add_rota):\n", style="bold cyan")
     entrada_text.append("(#sair para sair do programa)", style="dim yellow")
-    layout["top"].update(Panel(entrada_text, title="🔍 Entrada", style="magenta", border_style="bold magenta"))
+    layout["top"].update(Panel(entrada_text, title="Entrada", style="magenta", border_style="bold magenta"))
     
     # Main: histórico (esquerda) e conteúdo (direita)
     layout["main"].split_row(
