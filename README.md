@@ -173,46 +173,6 @@ Url (1) ←→ (N) Rota ←→ (1) Conteudo
 - Cada rota pode ter um conteúdo
 - Todos os dados são persistidos no SQLite
 
-## 📝 Exemplos de Código
-
-### Validar e criar URL
-
-```python
-from classes import ValidadorUrl
-
-url_obj, erro = ValidadorUrl.criar_ou_obter("google.com")
-if erro:
-    print(f"Erro: {erro}")
-else:
-    print(f"URL criada: {url_obj.caminho} (ID: {url_obj.id})")
-```
-
-### Adicionar rota
-
-```python
-from classes import GerenciadorRotas
-
-rota, erro = GerenciadorRotas.adicionar_rota(
-    url_id=1,
-    caminho_rota="/api",
-    titulo="API Root",
-    texto="Endpoint raiz"
-)
-```
-
-### Consultar do banco
-
-```python
-from config import get_db
-from classes import Url
-
-db = get_db()
-urls = db.query(Url).all()
-for url in urls:
-    print(f"{url.caminho}: {len(url.rotas)} rotas")
-db.close()
-```
-
 ## 🐛 Troubleshooting
 
 ### Erro: "Import sqlalchemy could not be resolved"
@@ -239,4 +199,4 @@ pip install sqlalchemy
 
 ## 👨‍💻 Autor
 
-Desenvolvido com ❤️ usando SQLAlchemy + Rich
+Desenvolvido usando SQLAlchemy + Rich
