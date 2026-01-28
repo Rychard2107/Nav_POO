@@ -10,8 +10,13 @@ DATABASE_URL = f"sqlite:///{BASE_DIR}/navigator.db"
 # Criar engine
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 
-# Criar session factory
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# Criar session factory com expire_on_commit=False
+SessionLocal = sessionmaker(
+    autocommit=False, 
+    autoflush=False, 
+    bind=engine,
+    expire_on_commit=False
+)
 
 # Base para os modelos
 Base = declarative_base()
@@ -23,3 +28,4 @@ def get_db():
 def init_db():
     """Inicializa o banco de dados criando todas as tabelas"""
     Base.metadata.create_all(bind=engine)
+
